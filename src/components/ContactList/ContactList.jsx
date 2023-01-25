@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import css from './ContactList.module.css';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact, fetchContacts } from 'Redux/contactsThunk';
+import { deleteContact, fetchContacts } from 'Redux/contacts/contactsThunk';
 import { getContact, getError, getFilter } from 'Redux/selectors';
 
 const ContactList = () => {
@@ -23,7 +23,7 @@ const ContactList = () => {
     <ul className={css.list}>
       {error && <p>Error...</p>}
       {Array.isArray(filteredContacts) &&
-        filteredContacts.map(({ id, name, phone }) => {
+        filteredContacts.map(({ id, name, number }) => {
           return (
             <li className={css.item} key={id}>
               <p className={css.text}>
@@ -32,7 +32,7 @@ const ContactList = () => {
               </p>
               <p className={css.text}>
                 <b>Phone: </b>
-                {phone}
+                {number}
               </p>
               <button
                 className={css.button}

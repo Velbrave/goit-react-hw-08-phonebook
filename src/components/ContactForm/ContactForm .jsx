@@ -3,13 +3,13 @@ import { toast } from 'react-toastify';
 import css from './ContactForm.module.css';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'Redux/contactsThunk';
+import { addContact } from 'Redux/contacts/contactsThunk';
 import { contact } from 'Redux/selectors';
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
-    phone: '',
+    number: '',
   });
   const contacts = useSelector(contact);
   const dispatch = useDispatch();
@@ -23,14 +23,14 @@ export const ContactForm = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    const formData = { name, phone };
+    const formData = { name, number };
     contacts.contacts.find(contact => contact.name === name)
       ? toast.error('This contact already exists')
       : dispatch(addContact(formData));
-    setFormData({ name: '', phone: '' });
+    setFormData({ name: '', number: '' });
   };
 
-  const { name, phone } = formData;
+  const { name, number } = formData;
 
   return (
     <form className={css.form} onSubmit={handleSubmit}>
@@ -52,12 +52,12 @@ export const ContactForm = () => {
         <input
           className={css.input}
           type="tel"
-          name="phone"
+          name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
           placeholder="(XXX) XXX-XX-XX"
-          value={phone}
+          value={number}
           onChange={handleChange}
         />
       </label>

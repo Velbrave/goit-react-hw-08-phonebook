@@ -1,5 +1,8 @@
-.list {
-  padding-left: 0px;
+.Phonebook {
+  margin-left: 50px;
+}
+
+.Contacts {
   margin-left: 50px;
 }
 
@@ -8,6 +11,7 @@
   font-weight: 500;
   margin-top: 10px;
   margin-bottom: 10px;
+  margin-left: 50px;
   border: 1px solid black;
   list-style: none;
   background-color: white;
@@ -17,7 +21,7 @@
   padding-left: 15px;
 }
 
-.button {
+.btn {
   margin-left: 15px;
   margin-bottom: 10px;
   padding: 3px 10px;
@@ -28,7 +32,7 @@
   border-color: blue;
 }
 
-.button:hover {
+.btn:hover {
   color: darkblue;
   border-color: blue;
   background-color: azure;
