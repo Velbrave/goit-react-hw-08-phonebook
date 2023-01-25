@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/528.38cf33c0.chunk.js","mappings":"yKAMA,UAJwB,WACtB,OAAO,4CACR,C","sources":["page/PageNotFound/PageNotFound404.jsx"],"sourcesContent":["import React from 'react';\n\nconst PageNotFound404 = () => {\n  return <div>PageNotFound404</div>;\n};\n\nexport default PageNotFound404;\n"],"names":[],"sourceRoot":""}
